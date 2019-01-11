@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "jquery/dist/jquery.min.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import WebFont from "webfontloader";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSearch, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import NavBar from "./Components/Navigation/NavBar";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+library.add({ faSearch, faGraduationCap });
+
+WebFont.load({
+  google: {
+    families: ["Pacifico"]
   }
-}
+});
+
+const App = () => {
+  return (
+    <div className="App">
+      <NavBar />
+    </div>
+  );
+};
 
 export default App;
